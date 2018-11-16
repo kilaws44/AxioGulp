@@ -1,0 +1,44 @@
+.main
+  &.loaded
+
+    .main-intro
+      .logo
+        opacity: 1
+      .countdown
+        opacity: 1
+
+      .headline
+        .additional-text
+          opacity: 1
+          transform: translateY(0)
+          transition: transform .6s 0s , opacity .6s 0s
+        .main-headline
+          opacity: 1
+          transform: translateY(0)
+          transition: transform .6s 0s , opacity .6s 0s
+        .description-text
+          opacity: 1
+          transform: translateY(0)
+          transition: transform .6s 0s , opacity .6s 0s
+        .btn
+          opacity: 1
+          transform: translateY(0)
+          transition: transform .6s 0s , opacity .6s 0s, background-color .3s
+
+  +MQ(L)
+    &.loaded
+
+      .main-intro
+        .logo
+          opacity: 1
+        .menu
+          opacity: 1
+
+      .main-aside
+        .aside-content
+          opacity: 1
+          &.animate-out
+            opacity: 0
+            transition: opacity .5s ease-in-out
+        .socials
+          opacity: 1

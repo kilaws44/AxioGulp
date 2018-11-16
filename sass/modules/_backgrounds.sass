@@ -1,0 +1,223 @@
+// ------------------------------------------------
+// Animated Background Styles Start
+// ------------------------------------------------
+
+// Video Background
+#video-wrapper
+  position: absolute
+  width: 100%
+  height: 100%
+  background-color: transparent
+
+// Particles Background
+#particles-js
+  position: absolute
+  width: 100%
+  height: 100%
+  min-height: 320px
+  background-color: transparent
+
+// Circles Background
+#circles-js
+  position: absolute
+  width: 100%
+  height: 100%
+  background-color: transparent
+
+// Polygon Background
+#polygon-js
+  position: absolute
+  width: 100%
+  height: 100%
+  min-height: 320px
+  background-color: transparent
+
+// Slideshow Background
+#bgndKenburns, #bgndKenburns-color-1, #bgndKenburns-color-2, #bgndKenburns-color-3, #bgndKenburns-color-4, #bgndKenburns-color-5
+  display: block
+  position: absolute
+  width: 100%
+  height: 100vh
+  min-height: 100%
+  background-color: transparent
+
+// Sparkles Background
+#sparkles
+  display: block
+  position: absolute
+  width: 100%
+  height: 100%
+  min-height: 320px
+  background-color: transparent
+  overflow: hidden
+
+  .layer
+    position: absolute
+    width: 100%
+    height: 100%
+
+    transform: translateZ(0)
+    backface-visibility: hidden
+    will-change: transform
+    transition: transform $animation-delay
+
+    img
+      position: absolute
+      +center
+      //bottom: 0
+      width: 100%
+      height: auto
+
+    &.layer-1
+      animation: sparkles-1 4s infinite
+    &.layer-2
+      animation: sparkles-2 20s infinite
+      animation-timing-function: ease-in-out
+    &.layer-3
+      animation: sparkles-3 8s infinite
+      animation-timing-function: ease-in-out
+    &.layer-4
+      animation: sparkles-4 6s infinite
+      animation-timing-function: ease-in-out
+
+  +MQ(L)
+    .layer
+      img
+        bottom: 0
+        left: auto
+        top: auto
+        transform: translateX(0) translateY(0)
+
+@keyframes sparkles-1
+  0%
+    opacity: 1
+    transform: translateX(0) translateY(0)
+  25%
+    opacity: .2
+    transform: translateX(-10px) translateY(10px)
+  50%
+    opacity: .2
+    transform: translateX(-5px) translateY(15px)
+  75%
+    opacity: .4
+    transform: translateX(7px) translateY(5px)
+  100%
+    opacity: 1
+    transform: translateX(0) translateY(0)
+
+@keyframes sparkles-2
+  0%
+    opacity: 0
+    transform: translateX(0) translateY(0) scale(1.2)
+  25%
+    opacity: 1
+  99%
+    opacity: 0
+    transform: translateX(-10px) translateY(-120px) scale(1)
+  100%
+    opacity: 0
+    transform: translateX(0) translateY(0) scale(1.2)
+
+@keyframes sparkles-3
+  0%
+    opacity: 0
+    transform: translateX(0) translateY(0) scale(1)
+  25%
+    opacity: 1
+  99%
+    opacity: 0
+    transform: translateX(0) translateY(-80px) scale(1.6)
+  100%
+    opacity: 0
+    transform: translateX(0) translateY(0) scale(1)
+
+@keyframes sparkles-4
+  0%
+    opacity: 0.4
+    transform: scale(1)
+  25%
+    opacity: 1
+    transform: scale(1.05)
+  75%
+    opacity: .6
+    transform: scale(1)
+  100%
+    opacity: 0.4
+    transform: scale(1)
+
+// CLouds background
+#clouds
+  display: block
+  position: absolute
+  width: 100%
+  height: 100%
+  min-height: 320px
+  background-color: transparent
+  overflow: hidden
+
+  .clouds__layer
+    position: absolute
+    top: 0
+    left: 100%
+    width: 100%
+    height: 100%
+
+    transform: translateZ(0)
+    backface-visibility: hidden
+    will-change: transform
+
+    transition: transform $animation-delay
+
+    img
+      display: block
+      height: auto
+      outline: none
+
+  .clouds__layer1
+    width: 400px
+    animation: clouds-1 60s infinite
+    animation-timing-function: ease-in
+    img
+      +position(absolute, null null -100px 0)
+      width: 400px
+
+  .clouds__layer2
+    width: 560px
+    animation: clouds-1 infinite
+    animation-duration: 43s
+    animation-timing-function: ease-in
+    img
+      +position(absolute, -60px null null 0)
+      width: 560px
+
+  .clouds__layer3
+    width: 300px
+    animation: clouds-1 infinite
+    animation-duration: 51s
+    animation-delay: 10s
+    animation-timing-function: ease-in
+    img
+      width: 300px
+      +position(absolute, 180px null null 0)
+
+@keyframes clouds-1
+  0%
+    opacity: 1
+    left: 100%
+    //transform: translateX(100%)
+  98%
+    opacity: 1
+    left: -100%
+    //transform: translateX(-100%)
+  99%
+    opacity: 0
+    left: -100%
+    //transform: translateX(-100%)
+  100%
+    opacity: 0
+    left: 100%
+    //transform: translateX(100%)
+
+// ------------------------------------------------
+// Animated Background Styles End
+// ------------------------------------------------

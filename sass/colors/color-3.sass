@@ -1,0 +1,410 @@
+// ------------------------------------------------
+// Project Name: Axio Coming Soon Template
+// Project Description: Axio - awesome coming soon template to kick-start your project
+// Tags: axio, coming soon, under construction, template, coming soon page, html5, css3
+// Version: 1.0.0
+// Build Date: April-July 2017
+// Last Update: July 2017
+// This product is available exclusively on Themeforest
+// Author: MixDesign
+// Author URI: http://mixdesign.club
+// File name: color-3.sass
+// ------------------------------------------------
+
+// ------------------------------------------------
+// Table of Contents
+// ------------------------------------------------
+//
+//  1. Import Bourbon
+//  2. Import Mixins and Common Variables
+//  3. Color Variables and Mixins
+//  4. Basic Color Options
+//  5. Animated Headline Colors
+//  6. Main Section Colors
+//  7. Buttons & Triggers Colors
+//  8. Forms Colors
+//  9. Scroll Custom Colors
+//  10. About Section Colors
+//  11. Works Section Colors
+//  12. Google Map Controls Colors
+//
+// ------------------------------------------------
+// Table of Contents End
+// ------------------------------------------------
+
+// Import Bourbon
+@import "bourbon"
+
+// Import Mixins and Common Variables
+@import "../partials/layout"
+@import "../partials/mixins"
+@import "../partials/variables"
+
+// Color Variables
+// Main Colors
+$accent-color: #f2552c
+$base-color: #6e8f3c
+$white: #ffffff
+// Text Colors
+// Dark text
+$text-dark-bright: #252525
+$text-dark: #4a4a4a
+$text-dark-medium: #444
+$text-dark-mute: #969696
+// Lidht text
+$text-light-bright: #ffffff
+$text-light: rgba(255,255,255,.8)
+$text-light-medium: rgba(255,255,255,.6)
+$text-light-mute: rgba(255,255,255,.4)
+// Text shadows
+$text-shadow-light: rgba(255,255,255,.6)
+// Backgrounds
+$bg-black-transparent: rgba(0,0,0,.4)
+$bg-white: #ffffff
+$bg-light-gray: #f3f3f3
+$bg-base-mute: #3e4139
+$bg-scroll: #c6c6c6
+$bg-dark: shade($base-color, 30%)
+// Main pattern
+=background-pattern
+  background:
+    image: url('../../../img/patterns/pattern-color-3.svg')
+    position: top left
+    size: 42px 71px
+  .no-svg &
+    background:
+      image: url('../../../img/patterns/pattern-color-3.png')
+// Buttons Colors (Borders & Text)
+// Outline Buttons
+$button-outline-dark: #b3b3b3
+$button-outline-light: #ffffff
+$button-outline-transparent: rgba(255,255,255,.3)
+$button-outline-transparent-hover: rgba(255,255,255,1.0)
+
+// Basic Color Options
+::selection
+  background-color: tint($base-color, 60%)
+  color: $text-dark-bright
+  text-shadow: none
+
+html
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+body
+  color: $text-dark-medium
+  background-color: $bg-white
+
+a
+  color: $text-dark-medium
+
+h1
+  color: $text-light-bright
+
+h2
+  color: tint($text-dark-mute, 20%)
+
+
+  &::after
+    background-color: $accent-color
+
+h3
+  color: $text-dark-bright
+
+h4
+  color: $text-light-bright
+
+p
+  color: $text-dark
+
+  span
+    color: shade($text-dark, 20%)
+
+blockquote
+
+  p
+    color: $text-dark-bright
+
+  cite
+    color: $text-dark
+
+.layer-black
+  background-color: $bg-black-transparent
+
+.content-section
+  background-color: $bg-white
+
+.main
+  +MQ(L)
+    background-color: $accent-color
+
+.main-intro
+  background-color: $bg-dark
+
+  .headline
+
+    p
+      color: $text-light-bright
+
+      &.additional-text
+        color: $text-light-bright
+
+  .countdown
+
+    #countdown
+      color: $text-light-bright
+
+      &::after
+        background-color: $accent-color
+
+    .help-text
+      color: $text-light-bright
+
+// Animated Headline
+.clip
+  .words-wrapper
+    &::after
+      background-color: $accent-color
+
+// Aside
+.main-aside
+  background-color: $base-color
+  +background-pattern
+
+  p
+    color: $text-light-bright
+
+  .socials
+    ul
+      li
+        a
+          color: $text-light-medium
+
+  +MQ(L)
+    .socials
+      ul
+        li
+          .no-touch &:hover
+            a
+              color: $text-light-bright
+
+// Menu colors (desktop only)
+.menu
+  +MQ(L)
+    ul
+      li
+        a
+          color: $text-light-bright
+          &::after
+            background-color: $accent-color
+
+// Buttons & Triggers colors
+.btn-solid
+  background-color: $accent-color
+  color: $text-light-bright
+  //text-shadow: 1px 1px 0 $text-shadow-light
+
+  .no-touch &:hover
+    background-color: tint($accent-color, 30%)
+
+.btn-outline
+  background-color: transparent
+  color: $button-outline-light
+  border: 1px solid $button-outline-light
+
+  .no-touch &:hover
+    background-color: $button-outline-light
+    color: $text-dark-bright
+
+  &.dark
+    color: $button-outline-dark
+    border: 1px solid $button-outline-dark
+
+    .no-touch &:hover
+      color: shade($button-outline-dark, 50%)
+      border: 1px solid shade($button-outline-dark, 50%)
+
+  &.transparent
+    background-color: transparent
+    border: 1px solid $button-outline-transparent
+    color: $button-outline-transparent
+
+    .no-touch &:hover
+      background-color: transparent
+      color: $button-outline-transparent-hover
+      border: 1px solid $button-outline-transparent-hover
+
+// Forms colors
+.form
+  .inputs-description
+    color: $text-light-mute
+
+.form-dark
+  ::-webkit-input-placeholder
+    color: tint($text-dark, 40%)
+
+  :-moz-placeholder
+    color: tint($text-dark, 40%)
+
+  ::-moz-placeholder
+    color: tint($text-dark, 40%)
+
+  :-ms-input-placeholder
+    color: tint($text-dark, 40%)
+
+  input:focus:required:invalid,
+  textarea:focus:required:invalid
+    color: $text-dark
+  input:required:valid,
+  textarea:required:valid
+    color: $text-dark
+
+  input, textarea
+    border-bottom: 1px solid $text-dark-bright
+    color: $text-dark
+
+    &:focus
+      border-bottom: 1px solid $accent-color
+
+  .inputs-description
+    color: tint($text-dark, 20%)
+
+.form-light
+  ::-webkit-input-placeholder
+    color: $text-light-medium
+
+  :-moz-placeholder
+    color: $text-light-medium
+
+  ::-moz-placeholder
+    color: $text-light-medium
+
+  :-ms-input-placeholder
+    color: $text-light-medium
+
+  input:focus:required:invalid,
+  textarea:focus:required:invalid
+    color: $text-light
+  input:required:valid,
+  textarea:required:valid
+    color: $text-light
+
+  input, textarea
+    border-bottom: 1px solid $white
+    color: $text-light-bright
+
+    &:focus
+      border-bottom: 1px solid $accent-color
+
+  .inputs-description
+    color: $text-light-mute
+
+.reply-group
+  i
+    background-color: $accent-color
+    span
+      color: $text-light-bright
+      //text-shadow: 1px 1px 0 $text-light-medium
+
+.stayintouch
+  .reply-group
+    .reply-group__text, .reply-group__title
+      color: $white
+
+// Popup forms colors
+.stayintouch
+  background-color: $base-color
+
+  .stayintouch-title
+    .title
+      color: $text-light-bright
+
+  +MQ(L)
+    background-color: transparent
+
+.notify
+  background-color: $bg-white
+
+  .notify-title
+    .title
+      color: $text-dark-bright
+    .subtitle
+      color: $text-dark-medium
+
+// Scroll colors
+.mCSB_draggerContainer
+  background: $bg-scroll
+
+.mCSB_scrollTools .mCSB_draggerRail
+  background-color: $bg-scroll
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+  background-color: $accent-color
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar
+  background-color: $accent-color
+
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar
+  background-color: $accent-color
+
+// About section colors
+.feature-item
+
+  p
+    color: $text-dark-medium
+
+  .icon
+    background-image: url('../../../img/features/icons-sprite_dark.svg')
+
+    .no-svg &
+      background-image: url('../../../img/features/icons-sprite_dark.png')
+
+.about-blockquote
+  background-color: $bg-light-gray
+  background-image: url('../../../img/backgrounds/bg-blockquote.jpg')
+
+// Works section colors
+.gallery
+  position: relative
+  +clearfix
+  padding: 0 2.4rem
+
+  +MQ(M)
+    padding: 0 4.2rem
+
+  +MQ(L)
+    padding: 0 4.2rem 4.2rem 4.2rem
+
+.my-gallery
+  figure
+
+    &::after
+      background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,0.8) 100%)
+
+    +MQ(L)
+      &::after
+        background-image: none
+        background-color: rgba(0,0,0,.6)
+
+      figcaption
+        h4
+          &::after
+            background-color: $accent-color
+
+.pswp__caption__center
+  p
+    color: $text-light-medium
+
+.pswp__bg
+  background: $bg-base-mute
+
+.pswp__caption, .pswp__top-bar
+  background-color: rgba(0,0,0,.3)
+
+.pswp__button--close
+  background-color: $accent-color
+
+// Google map colors
+#zoom-in, #zoom-out
+  background-color: $base-color
+  color: $white

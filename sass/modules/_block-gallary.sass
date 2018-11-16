@@ -1,0 +1,122 @@
+.gallery
+  position: relative
+  +clearfix
+  padding: 0 2.4rem
+
+  +MQ(M)
+    padding: 0 4.2rem
+
+  +MQ(L)
+    padding: 0 4.2rem 4.2rem 4.2rem
+
+  +MQ(XXL)
+    padding: 0 5.4rem 5.4rem 5.4rem
+
+.my-gallery
+  figure
+    position: relative
+    padding: .6rem 0
+    margin: 0
+    overflow: hidden
+    cursor: pointer
+
+    &::after
+      content: ''
+      +position(absolute, .6rem null null 0)
+      width: 100%
+      height: calc(100% - 1.2rem)
+      background-image: linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,0.8) 100%)
+
+    figcaption
+      +position(absolute, 0 null null 0)
+      width: 100%
+      height: 100%
+      padding: 2.4rem
+      text-align: center
+      z-index: 1
+
+      h4
+        position: absolute
+        bottom: 2.4rem
+        +center(x)
+        opacity: 1
+        margin: 0
+
+        &::after
+          content: ''
+          display: none
+
+    p
+      display: none
+
+    +MQ(M)
+      padding: .6rem
+      &::after
+        +position(absolute, .6rem null null .6rem)
+        width: calc(100% - 1.2rem)
+        height: calc(100% - 1.2rem)
+
+    +MQ(L)
+      &::after
+        background-image: none
+        background-color: rgba(0,0,0,.6)
+        opacity: 0
+        transition: opacity .3s
+
+      figcaption
+        h4
+          bottom: auto
+          +center
+          margin: 2.4rem 0 0 0
+          opacity: 0
+          transition: opacity .3s .2s, margin .2s .2s ease-in
+
+          &::after
+            display: block
+            position: absolute
+            bottom: -1rem
+            +center(x)
+            width: 0%
+            height: 2px
+            background-color: tint($dark-color, 40%)
+            transition: width .3s .3s ease-in-out
+
+    .no-touch &:hover
+
+      &::after
+        opacity: 1
+
+      figcaption
+        h4
+          opacity: 1
+          margin: 0
+          &::after
+            width: 100%
+
+.pswp__caption__center
+
+  p
+    font-size: 1.4rem
+    font-weight: 400
+    line-height: 1.8
+
+  h4
+    margin-bottom: 2rem
+
+.pswp__counter
+  font-family: $secondary-font
+
+.pswp__button--close
+  opacity: 1
+
+.pswp__button--arrow--left::before, .pswp__button--arrow--right::before
+  width: 44px
+  height: 44px
+
+.pswp__button--arrow--left:before
+  left: 0
+  background-position: -132px -44px
+
+.pswp__button--arrow--right:before
+  right: 0
+  background-position: -88px -44px

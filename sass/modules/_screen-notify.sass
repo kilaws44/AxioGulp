@@ -1,0 +1,134 @@
+.notify
+  +position(fixed, 0 0 null null)
+  width: 100%
+  height: 100%
+  overflow-y: auto
+  z-index: 10
+  padding: 2.4rem
+  background-color: $light-color
+
+  opacity: 1
+  transform: translateZ(0)
+  transform: translateX(100%)
+  transition: opacity .3s, transform .3s
+
+  .notify-title
+    padding: 4.8rem 0 2.4rem 0
+
+    .title
+      font:
+        size: 1.6rem
+        weight: 600
+      text-transform: uppercase
+      letter-spacing: 1px
+      color: shade($dark-color, 50%)
+      margin-bottom: 2.4rem
+
+    .subtitle
+      font:
+        size: 1.6rem
+        weight: 400
+      color: $dark-color
+
+  .notify-title .title,
+  .notify-title .subtitle,
+  form input[type="email"],
+  form button
+    opacity: 0
+    transform: translateZ(0)
+    transform: translateY(50px)
+    transition: opacity $animation-delay, transform $animation-delay
+
+  .btn-square
+    transform: scale(0)
+    transition: all .3s ease-in-out
+
+  &.is-visible
+    transform: translateX(0)
+
+    .notify-title
+
+      .title
+        opacity: 1
+        transform: translateY(0)
+        transition: transform .3s $animation-duration - .2s , opacity .3s $animation-duration - .2s
+
+      .subtitle
+        opacity: 1
+        transform: translateY(0)
+        transition: transform .3s $animation-duration - .1s , opacity .3s $animation-duration - .1s
+
+    form
+      input[type="email"]
+        opacity: 1
+        transform: translateY(0)
+        transition: transform .3s $animation-duration, opacity .3s $animation-duration, border .5s
+
+      button
+        opacity: 1
+        transform: translateY(0)
+        transition: transform .3s $animation-duration + .1s, opacity .3s $animation-duration + .1s, background-color $animation-delay
+
+    .btn-square
+      transform: scale(1)
+      transition: transform .3s $animation-duration + .5s, background-color .5s, border .5s, color .5s
+
+  +MQ(M)
+    padding: 4.8rem
+
+    .notify-title
+      padding: 8rem 0 3.6rem 0
+
+      .title
+        font-size: 2rem
+        line-height: 1.4
+        margin-bottom: 3.6rem
+
+      .subtitle
+        font:
+          size: 1.8rem
+
+  +MQ(L)
+    +position(absolute, 0 auto null 0)
+    width: 66.66666667%
+    min-height: 546px
+    padding: 4.8rem
+    transform: translateX(100%)
+
+    .notify-title
+      padding: 0 0 3.6rem 0
+
+    .notify-content
+      position: absolute
+      left: 0
+      +center(y)
+      padding: 0 4.8rem
+
+    &.is-visible
+      transform: translateX(0)
+
+  +MQ(XL)
+    width: 75%
+
+    .notify-title
+      max-width: 610px
+
+  +MQ(XXL)
+    min-height: 654px
+    padding: 4.8rem 6rem
+
+    .notify-content
+      padding: 0 6rem
+      max-width: 710px
+
+    .notify-title
+      padding: 0 0 6rem 0
+
+      .title
+        font:
+          size: 2.4rem
+        margin-bottom: 3.6rem
+
+      .subtitle
+        font:
+          size: 2rem

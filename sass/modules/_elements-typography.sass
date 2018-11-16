@@ -1,0 +1,128 @@
+h1
+  font:
+    weight: 700
+    size: 3.6rem
+  text-transform: uppercase
+  line-height: 1
+  color: $light-color
+  margin-bottom: 2.4rem
+
+  +MQ(M)
+    font:
+      size: 8rem
+
+  +MQ(XXL)
+    font:
+      size: 12rem
+    margin-bottom: 3.2rem
+
+h2
+  position: relative
+  display: inline-block
+  font:
+    weight: 700
+    size: 4.8rem
+  text-transform: uppercase
+  line-height: .86
+  color: tint($dark-color, 60%)
+  padding-bottom: 1.2rem
+
+  &::after
+    content: ''
+    display: block
+    +position(absolute, null null -3px -2.4rem)
+    width: calc(100% + 2.4rem)
+    height: 4px
+    background-color: tint($dark-color, 30%)
+
+  +MQ(M)
+    font:
+      size: 8.6rem
+
+    &::after
+      width: calc(100% + 4.8rem)
+      left: -4.8rem
+
+  +MQ(XXL)
+    &::after
+      height: 6px
+      width: calc(100% + 6rem)
+      left: -6rem
+
+h3
+  font:
+    size: 1.6rem
+    weight: 600
+  text-transform: uppercase
+  line-height: 1.4
+  color: shade($dark-color, 40%)
+  margin-bottom: 2.4rem
+
+h4
+  font:
+    size: 1.6rem
+    weight: 500
+  text-transform: uppercase
+  line-height: 1.4
+  letter-spacing: 1px
+  color: $light-color
+
+p
+  font:
+    size: 1.8rem
+    weight: 500
+
+  span
+    font:
+      family: $secondary-font
+      weight: 600
+    white-space: nowrap
+
+  +MQ(XXL)
+    font:
+      size: 2rem
+
+blockquote
+  text-align: center
+  padding-top: 48px
+
+  &::before
+    content: '\201d'
+    display: block
+    position: absolute
+    top: -10px
+    +center(x)
+    font:
+      family: $secondary-font
+      size: 80px
+      weight: 300
+    line-height: 1
+
+  p
+    color: shade($dark-color, 40%)
+    margin-bottom: 3.6rem
+
+  cite
+    font:
+      size: 1.2rem
+      weight: 500
+    text-transform: uppercase
+    line-height: 1.2
+    color: tint($dark-color, 30%)
+    span
+      display: block
+
+  +MQ(M)
+    p
+      max-width: 610px
+      margin: 0 auto 3.6rem
+
+  +MQ(XXL)
+    p
+      max-width: 640px
+      font:
+        size: 2.4rem
+      margin-bottom: 4.8rem
+    cite
+      font:
+        size: 1.4rem

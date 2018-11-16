@@ -1,0 +1,52 @@
+.menu
+  display: none
+
+  +MQ(L)
+    display: block
+    +position(absolute, 4.8rem 4.8rem null null)
+    opacity: 0
+    transition: opacity 1s ease-in-out
+
+    ul
+      display: block
+      position: relative
+      line-height: 1
+
+      li
+        display: inline-block
+        margin-right: 36px
+
+        a
+          display: block
+          position: relative
+          font:
+            size: 1.4rem
+            weight: 500
+          text-transform: uppercase
+          letter-spacing: .1rem
+          color: $light-color
+
+          &::after
+            content: ''
+            display: block
+            position: absolute
+            bottom: -1rem
+            +center(x)
+            width: 0%
+            height: 2px
+            background-color: tint($dark-color, 20%)
+            transition: width .3s ease-in-out
+
+          .no-touch &:hover
+            &::after
+              width: 100%
+
+        &:last-of-type
+          margin-right: 0
+
+  +MQ(XXL)
+    ul
+      li
+        a
+          font:
+            size: 1.6rem

@@ -1,0 +1,116 @@
+// ------------------------------------------------
+// Project Name: Axio Coming Soon Template
+// Project Description: Axio - awesome coming soon template to kick-start your project
+// Tags: axio, coming soon, under construction, template, coming soon page, html5, css3
+// Version: 1.0.0
+// Build Date: April-July 2017
+// Last Update: July 2017
+// This product is available exclusively on Themeforest
+// Author: MixDesign
+// Author URI: http://mixdesign.club
+// File name: first-screen.sass
+// ------------------------------------------------
+
+// ------------------------------------------------
+// Table of Contents
+// ------------------------------------------------
+//
+//  1. Import Bourbon
+//  2. Import Reset
+//  3. Import Mixins and Variables
+//  4. Import Base CSS Styles
+//  5. Import Typography and Controls
+//  6. Import Main Section
+//  7. Content Sections Minimal Styles
+//  8. Popup Forms Minimal Styles
+//
+// ------------------------------------------------
+// Table of Contents End
+// ------------------------------------------------
+
+// Import Bourbon
+@import "bourbon"
+
+// Import Reset
+@import "partials/reset"
+
+// Import Mixins and Variables
+@import "partials/layout"
+@import "partials/mixins"
+@import "partials/variables"
+
+// Import Base CSS Styles
+@import "modules/base"
+
+// Import Typography and Controls
+@import "modules/elements-typography"
+@import "modules/elements-buttons"
+
+// Import Main Section
+@import "modules/section-main"
+@import "modules/block-menu"
+@import "modules/block-countdown"
+@import "modules/block-socials"
+
+// Content Sections Minimal Styles
+.content-section
+  position: relative
+  width: 100%
+  background-color: $light-color
+  opacity: 1
+  transform: translateZ(0)
+  backface-visibility: hidden
+  transform: translateX(0)
+  transition: opacity .3s, transform .3s
+  z-index: 8
+
+  &.is-visible
+    transform: translateX(0)
+
+  +MQ(L)
+    position: absolute
+    top: 0
+    left: 0
+    width: 66.66666667%
+    height: 100%
+    overflow-y: auto
+    transform: translateX(100%)
+
+    &.is-visible
+      transform: translateX(0)
+
+  +MQ(XL)
+    width: 75%
+
+// Popup Forms Minimal Styles
+.stayintouch
+  +position(fixed, 0 0 null null)
+  width: 100%
+  height: 100%
+  opacity: 1
+  transform: translateZ(0)
+  transform: translateX(100%) translateY(0)
+  transition: opacity .3s, transform .3s
+  z-index: 14
+
+  +MQ(L)
+    +position(absolute, 0 0 null null)
+    transform: translateX(0) translateY(100%)
+
+.notify
+  +position(fixed, 0 0 null null)
+  width: 100%
+  height: 100%
+  z-index: 10
+  opacity: 1
+  transform: translateZ(0)
+  transform: translateX(100%)
+  transition: opacity .3s, transform .3s
+
+  +MQ(L)
+    +position(absolute, 0 auto null 0)
+    width: 66.66666667%
+    transform: translateX(101%)
+
+  +MQ(XL)
+    width: 75%
